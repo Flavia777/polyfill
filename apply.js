@@ -1,3 +1,5 @@
+// apply方法  调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数  (thisArg, [argsArray])
+
 Function.prototype.apply = function(context, arr) {
   var fn = this,
       args = [],

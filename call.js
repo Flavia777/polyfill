@@ -1,3 +1,5 @@
+// call方法  调用一个函数 (thisArg, arg1, arg2, arg3, ...)
+
 Function.prototype.call = function(context) {
   var fn = this,
       res,
