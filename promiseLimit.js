@@ -32,8 +32,8 @@ function promiseLimit(promises, limit) {
     // 新的promise加入运行队列
     function addQueue() {
       // 如果所有的promise均运行完成，则返回结果数组
-      if(!queue.length) {
-        resolve(data);
+      if(!queue.length && !count) {
+        resolve(result);
         return;
       }
 

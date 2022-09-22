@@ -103,8 +103,8 @@ var a = {
    }
 }
 var b = a.fn;
-b.call(a, 1, 3); // zhang 4
-// b.apply(a, [1, 3]）
+b.apply(a, [1, 3]); // zhang 4
+// b.call(a, 1, 3);
 
 
 // bind()

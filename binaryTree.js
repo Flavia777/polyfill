@@ -73,6 +73,7 @@ function dfs(node, res = []) {
 function dfs(nodes) {
   let res = [];
   let stack = [nodes];
+  // 使用一个栈stack，每次首先输出栈顶元素，也就是当前二叉树根节点，之后依次输出二叉树的左孩子和右孩子
   while(stack.length) {
     let node = stack.pop(); // 取stack中的最后一个
     // 先push根节点的值，再将右子树压入栈中，最后将左子树压入栈中；
@@ -102,15 +103,23 @@ function dfs(node) {
 
 // 后序遍历  左-右-中
 // 先递归遍历左子树，从最后一个左子树开始存入数组，然后遍历右子树，最后是双亲结点
-
-
+function dfs(node) {
+  const res = [], stack = [];
+  while (stack.length || node) {
+    res.unshift(node.val)
+    node.left && stack.push(node.left)
+    node.right && stack.push(node.right)
+    node = stack.pop()
+  }
+  return res
+}
 
 
 // 获取二叉树的右视图
 // DFS深度优先遍历，右子树的值为最终看到的值
 // 左视图同理
 function rightSideView(root, depth = 0, res = []) {
-  if(!root) return [];
+  if(!root) return []; 
   // 如果depth层右子树有值，则返回，无值则获取左子树的值
   if(!res[depth]) {
     res[depth] = root.value;

@@ -71,7 +71,8 @@ function Promise(callback) {
 // 3. then方法必须返回一个promise
 Promise.prototype.then = function(onResolved, onRejected) {
   var self = this;
-  var promise x;
+  var promise,
+      x;
 
   // 规则1：参数不为函数，则必须被忽略
   onResolved = typeof onResolved === 'function' ? onResolved : v => v;
